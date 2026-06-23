@@ -1,50 +1,50 @@
 [
   {
     "id": 1,
-    "nome": "Tama Starclassic Maple",
-    "preco": 12999.90,
-    "imagem": "/imagens/baterias/tama-starclassic-maple.jpg"
+    "desc": "Tama Starclassic Maple",
+    "valor": 12999.90,
+    "imagem": "../../public/tama-starclassic-maple.jpg"
   },
   {
     "id": 2,
-    "nome": "Pearl Masters Maple Complete",
-    "preco": 11499.90,
-    "imagem": "/imagens/baterias/pearl-masters-maple-complete.jpg"
+    "desc": "Pearl Masters Maple Complete",
+    "valor": 11499.90,
+    "imagem": "../../public/pearl-masters-maple-complete.jpg"
   },
   {
     "id": 3,
-    "nome": "Yamaha Recording Custom",
-    "preco": 15999.90,
-    "imagem": "/imagens/baterias/yamaha-recording-custom.jpg"
+    "desc": "Yamaha Recording Custom",
+    "valor": 15999.90,
+    "imagem": "../../public/yamaha-recording-custom.jpg"
   },
   {
     "id": 4,
-    "nome": "Ludwig Classic Maple",
-    "preco": 13999.90,
-    "imagem": "/imagens/baterias/ludwig-classic-maple.jpg"
+    "desc": "Ludwig Classic Maple",
+    "valor": 13999.90,
+    "imagem": "../../public/ludwig-classic-maple.jpg"
   },
   {
     "id": 5,
-    "nome": "Gretsch Renown",
-    "preco": 9999.90,
-    "imagem": "/imagens/baterias/gretsch-renown.jpg"
+    "desc": "Gretsch Renown",
+    "valor": 9999.90,
+    "imagem": "../../public/gretsch-renown.jpg"
   },
   {
     "id": 6,
-    "nome": "Pearl Export",
-    "preco": 5499.90,
-    "imagem": "/imagens/baterias/pearl-export.jpg"
+    "desc": "Pearl Export",
+    "valor": 5499.90,
+    "imagem": "../../public/pearl-export.png"
   },
   {
     "id": 7,
-    "nome": "Tama Imperialstar",
-    "preco": 4999.90,
-    "imagem": "/imagens/baterias/tama-imperialstar.jpg"
+    "desc": "Tama Imperialstar",
+    "valor": 4999.90,
+    "imagem": "../../public/tama-imperialstar.jpg"
   },
   {
     "id": 8,
-    "nome": "Mapex Armory",
-    "preco": 7499.90,
-    "imagem": "/imagens/baterias/mapex-armory.jpg"
+    "desc": "Mapex Armory",
+    "valor": 7499.90,
+    "imagem": "../../public/mapex-armory.jpg"
   }
 ]

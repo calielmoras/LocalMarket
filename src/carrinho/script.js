@@ -1,33 +1,23 @@
-$(document).ready(function() {
-    const carrinho = JSON.parse(localStorage.getItem("carrinho")) || []
+$(document).ready(function(){
+    const carrinho = JSON.parse(localStorage.getItem("carrinho")) || [
+    ]
     const listElement = $('#lista')
-    const totalElement = $("#total")
+    const totalElement = $('#total')
 
     function exibirCarrinho(){
         listElement.empty()
         let totalPreco = 0
-
-        if (carrinho.length === 0) {
-            listElement.append('<p>Seu carrinho está vazio.</p>')
-            totalElement.text('Total: R$ 0,00')
-            return
-        }
-
         $.each(carrinho, function(index, item){
-            totalPreco += item.preco || 0
-            const listItem = $("<div class='cart-item mb-2'>")
-            listItem.append($(`<strong>${item.nome}</strong> - R$ ${item.preco.toFixed(2).replace('.', ',')}`))
-
-            const removeButton = $("<button class='btn btn-sm btn-danger ms-2'>❌</button>")
-                .click(function(){
-                    removerItem(index)
-                })
-
+            const listItem = $("<li>").text(`${item.desc} - Preço: $${item.valor.toFixed(2)}`)
+            const removeButton = $("<button>").text("✖️").css("margin-left", "10px").click(function(){
+                removerItem(index)
+            })
             listItem.append(removeButton)
             listElement.append(listItem)
-        })
 
-        totalElement.text(`Total: R$ ${totalPreco.toFixed(2).replace('.', ',')}`)
+            totalPreco += item.valor
+        })
+        totalElement.text(`Total: $${totalPreco.toFixed(2)}`)
     }
 
     function removerItem(index){
@@ -36,5 +26,43 @@ $(document).ready(function() {
         exibirCarrinho()
     }
 
-    exibirCarrinho()
+        exibirCarrinho()
 })
+
+function gerar(){
+    const listaElement = document.getElementById("lista")
+    const totalElement = document.getElementById("total")
+    const listaClone = listaElement.cloneNode(true)
+    $(listaClone).find("button").remove()
+    const listaHtml = listaClone.innerHTML
+    const totalHtml = totalElement.innerHTML
+    const conteudoHTML = `
+        <html>
+            <head>
+                <meta charset="UTF-8">
+            </head>
+            <body>
+                <h1>PEDIDO CONFIRMADO</h1>
+                <h3>Agradecemos a sua compra e sua preferência.</h3>
+                <br>
+                ${listaHtml}
+                <br>
+                <br>
+                ${totalHtml}
+            </body>
+        </html>
+    `
+
+    const blob = new Blob([conteudoHTML], {type: "aplication/nsword"})
+    const link = document.createElement("a")
+
+    link.href = URL.createObjectURL(blob)
+    link.download = "pedido.doc"
+    link.click()
+    document.getElementById("pedido").style.display = "block"
+}
+
+
+function successClose(){
+    document.getElementById("pedido").style.display = "none"
+}
